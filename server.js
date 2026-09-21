@@ -1,5 +1,5 @@
 const express = require('express');
-const sql = require('mssql/msnodesqlv8');
+const sql = require('mssql');
 const cors = require('cors');
 
 const app = express();
@@ -9,9 +9,15 @@ app.use(cors());
 app.use(express.json());
 
 const sqlConfig = {
-    connectionString: 'Driver={SQL Server};Server=.\\SQLEXPRESS;Database=HotflixDB;Trusted_Connection=yes;'
+    user: 'Longgia2210_SQLLogin_1', 
+    password: 'fpsl9mhxmc', 
+    server: 'hotflix_db.mssql.somee.com', 
+    database: 'hotflix_db', 
+    options: {
+        encrypt: true, 
+        trustServerCertificate: true 
+    }
 };
-
 app.get('/api/movies', async (req, res) => {
     try {
         let page = parseInt(req.query.page) || 1;
