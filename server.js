@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 const sqlConfig = {
-    user: 'Longgia2210_SQLLogin_1', 
+    user: 'Longia2210_SQLLogin_1', 
     password: 'fpsl9mhxmc', 
     server: 'hotflix_db.mssql.somee.com', 
     database: 'hotflix_db', 
